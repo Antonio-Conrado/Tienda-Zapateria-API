@@ -1,0 +1,24 @@
+{
+  "name": "tiendazapateriaapi",
+  "version": "1.0.0",
+  "description": "Rest API para una tienda de Zapateria",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "type": "module",
+  "author": "José Antonio Conrado López",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^3.9.1",
+    "sequelize": "^6.37.0",
+    "shortid": "^2.2.16",
+    "slug": "^8.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "sequelize-cli": "^6.6.2"
+  }
+}
