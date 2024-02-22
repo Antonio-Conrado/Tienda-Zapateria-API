@@ -3,10 +3,9 @@ import Categoria from '../../models/Catalogos/Categoria.js';
 const nuevaCategoria = async (req, res, next) => {
     try {
         const categoria = await Categoria.create({
-            where:{
                 nombre : req.body.nombre.trim(),
                 estado : req.body.estado
-        }});
+        });
         res.status(200).json({ mensaje: 'Se agregó la categoria correctamente!', datos: categoria });
 
     } catch (error) {
