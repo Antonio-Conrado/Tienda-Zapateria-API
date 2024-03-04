@@ -22,7 +22,7 @@ const nuevoUsuario = async(req,res,next) =>{
             roleId
         });
         res.status(200).json({ mensaje: 'Se agregó el usuario correctamente!'});
-        
+
     } catch (error) {
         res.status(500).json({mensaje : "Hubo un problema. Comuníquese con el Administrador!", tipo : `${error}`});
     }
@@ -75,7 +75,14 @@ const login = async(req,res,next) =>{
                 rol : nombreRol.nombre
             };
 
-            res.status(200).json({mensaje : 'Has iniciado sesión correctamente!', datos: generarJWT(usuarioAutenticado)});
+            res.status(200).json({
+                mensaje : 'Has iniciado sesión correctamente!',
+                datos: usuarioAutenticado,
+                token: generarJWT({
+                    id: usuario.id,
+                    rol: nombreRol.nombre
+                })
+            });
         }else{
             return res.status(400).json({mensaje : 'Password Incorrecto!'});
         }

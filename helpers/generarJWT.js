@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 
 const generarJWT = (usuario) => {
-    const { id, nombres, rol } = usuario;
+    const { id, rol } = usuario;
     try {
         return jwt.sign(
-            { id, nombres, rol },
+            { id, rol },
             process.env.JWT_SECRET,
             { expiresIn: "5d" },
         );
