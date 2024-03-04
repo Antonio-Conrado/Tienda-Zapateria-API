@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 
 import catalogosRouter from './routes/catalogosRouter.js';
 import usuarioRouter from './routes/usuarioRouter.js';
+import inventarioRouter from './routes/inventarioRouter.js';
 import db from './config/db.js';
 
 
@@ -23,6 +24,7 @@ const port = process.env.PORT || 4000;
 //routes
 app.use('/catalogos',catalogosRouter);
 app.use('/',usuarioRouter);
+app.use('/', inventarioRouter);
 
 
 //definir carpeta public
