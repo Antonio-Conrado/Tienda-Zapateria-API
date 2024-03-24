@@ -11,6 +11,26 @@ const Inventario  = db.define('inventarios',{
         primaryKey  : true,
         autoIncrement : true
     },
+    nombre : {
+        type : Sequelize.STRING(100),
+        validate : {
+            notEmpty: {
+                msg : 'El nombre no puede ir vacío!'
+            }
+        },
+        allowNull : false
+
+    },
+    descripcion : {
+        type : Sequelize.STRING(300),
+        validate : {
+            notEmpty: {
+                msg : 'La descripción no puede ir vacía!'
+            }
+        },
+        allowNull : false
+
+    },
     existencia : {
         type :  Sequelize.INTEGER,
         validate : {
@@ -29,6 +49,11 @@ const Inventario  = db.define('inventarios',{
         },
         allowNull : false
     },
+    descuento : {
+        type : Sequelize.BOOLEAN,
+        defaultValue : false
+    },
+    descuentoMax : Sequelize.INTEGER,
     fecha : {
         type:  Sequelize.DATE,
         defaultValue :  () => new Date()

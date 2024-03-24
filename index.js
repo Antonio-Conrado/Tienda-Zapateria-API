@@ -24,7 +24,7 @@ const port = process.env.PORT || 4000;
 //routes
 app.use('/catalogos',catalogosRouter);
 app.use('/',usuarioRouter);
-app.use('/', inventarioRouter);
+app.use('/admin', inventarioRouter);
 
 
 //definir carpeta public
